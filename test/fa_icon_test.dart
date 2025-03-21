@@ -1,9 +1,10 @@
 // Tests adapted from https://github.com/flutter/flutter/blob/master/packages/flutter/test/widgets/icon_test.dart
 // Copyright 2014 The Flutter Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
@@ -16,12 +17,12 @@ void main() {
             color: Color(0xFF666666),
             opacity: 0.5,
           ),
-          child: FaIcon(FontAwesomeIcons.accessibleIcon),
+          child: FaIcon(FontAwesomeIcons.user),
         ),
       ),
     );
     final RichText text = tester.widget(find.byType(RichText));
-    expect(text.text.style!.color, const Color(0xFF666666).withOpacity(0.5));
+    expect(text.text.style!.color, const Color(0x80666666));
   });
 
   testWidgets('Icon sizing - no theme, default size',
@@ -30,7 +31,7 @@ void main() {
       const Directionality(
         textDirection: TextDirection.ltr,
         child: Center(
-          child: FaIcon(FontAwesomeIcons.accessibleIcon),
+          child: FaIcon(FontAwesomeIcons.user),
         ),
       ),
     );
@@ -46,7 +47,7 @@ void main() {
         textDirection: TextDirection.ltr,
         child: Center(
           child: FaIcon(
-            FontAwesomeIcons.accessibleIcon,
+            FontAwesomeIcons.user,
             size: 96.0,
           ),
         ),
@@ -64,7 +65,7 @@ void main() {
         child: Center(
           child: IconTheme(
             data: IconThemeData(size: 36.0),
-            child: FaIcon(FontAwesomeIcons.accessibleIcon),
+            child: FaIcon(FontAwesomeIcons.user),
           ),
         ),
       ),
@@ -83,7 +84,7 @@ void main() {
           child: IconTheme(
             data: IconThemeData(size: 36.0),
             child: FaIcon(
-              FontAwesomeIcons.accessibleIcon,
+              FontAwesomeIcons.user,
               size: 48.0,
             ),
           ),
@@ -103,7 +104,7 @@ void main() {
         child: Center(
           child: IconTheme(
             data: IconThemeData(),
-            child: FaIcon(FontAwesomeIcons.accessibleIcon),
+            child: FaIcon(FontAwesomeIcons.user),
           ),
         ),
       ),
@@ -119,7 +120,7 @@ void main() {
       const Directionality(
         textDirection: TextDirection.ltr,
         child: Center(
-          child: FaIcon(FontAwesomeIcons.accessibleIcon),
+          child: FaIcon(FontAwesomeIcons.user),
         ),
       ),
     );
@@ -131,7 +132,7 @@ void main() {
         textDirection: TextDirection.ltr,
         child: Center(
           child: FaIcon(
-            FontAwesomeIcons.accessibleIcon,
+            FontAwesomeIcons.user,
             semanticLabel: 'a label',
           ),
         ),
